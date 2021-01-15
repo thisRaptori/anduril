@@ -1,0 +1,37 @@
+.anduril_filtered-chat .chat-line__message {
+	display: none;
+}
+
+.anduril_filtered-chat .chat-line__message.anduril_broadcaster,
+.anduril_filtered-chat[data-all='show'] .chat-line__message,
+.anduril_filtered-chat[data-moderator='show'] .chat-line__message.anduril_moderator,
+.anduril_filtered-chat[data-subscriber='show'] .chat-line__message.anduril_subscriber,
+.anduril_filtered-chat[data-verified='show'] .chat-line__message.anduril_verified,
+.anduril_filtered-chat[data-vip='show'] .chat-line__message.anduril_vip {
+	display: block;
+}
+
+.anduril_chat-filters-container {
+	align-items: center;
+	display: flex;
+	gap: var(--space-1);
+	justify-content: space-around;
+	margin: var(--space-1);
+}
+
+.anduril_chat-filter {
+	border-radius: var(--border-radius-medium);
+	display: flex;
+	flex: 0 1 100%;
+	justify-content: center;
+	line-height: 24px;
+	opacity: 0.5;
+}
+
+.anduril_filtered-chat[data-all='show'] .anduril_chat-filter[data-target='all'],
+.anduril_filtered-chat[data-moderator='show'] .anduril_chat-filter[data-target='moderator'],
+.anduril_filtered-chat[data-subscriber='show'] .anduril_chat-filter[data-target='subscriber'],
+.anduril_filtered-chat[data-verified='show'] .anduril_chat-filter[data-target='verified'],
+.anduril_filtered-chat[data-vip='show'] .anduril_chat-filter[data-target='vip'] {
+	opacity: 1;
+}
