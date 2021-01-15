@@ -1,0 +1,35 @@
+{
+	"name": "Anduril",
+	"version": "1.0.0",
+	"description": "Adds useful features to the Twitch interface",
+	"author": "Joe McGrath",
+	"manifest_version": 2,
+	"icons": {
+		"16": "icon/icon16.png",
+		"32": "icon/icon32.png",
+		"48": "icon/icon48.png",
+		"64": "icon/icon64.png",
+		"128": "icon/icon128.png"
+	},
+	"browser_action": {
+		"default_icon": "icon/icon32.png"
+	},
+	"content_scripts": [
+		{
+			"run_at": "document_start",
+			"matches": ["https://www.twitch.tv/*"],
+			"js": [
+				"features/chatFilters.js",
+				"features/userHighlight.js",
+				"features/userNote.js",
+				"features/userPopup.js"
+			],
+			"css": ["features/chatFilters.css", "features/userNote.css"]
+		}
+	],
+	"options_ui": {
+		"page": "options/options.html",
+		"open_in_tab": false
+	},
+	"permissions": ["storage"]
+}
