@@ -1,0 +1,56 @@
+.anduril_fullscreen {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+.anduril_note-prompt-container {
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	z-index: 999999;
+}
+
+.anduril_note-close {
+	z-index: 1;
+}
+
+.anduril_note-content {
+	background: var(--color-background-base);
+	border-radius: 4px;
+	color: var(--color-text-base);
+	padding: var(--space-1);
+	position: relative;
+	z-index: 2;
+}
+
+.anduril_note-content > div {
+	display: flex;
+	gap: var(--space-1);
+	padding-top: var(--space-1);
+}
+
+.anduril_note-prompt-container .anduril_note-input {
+	border-radius: var(--border-radius-medium);
+	flex-grow: 1;
+	padding: 0.5rem;
+}
+
+.anduril_note-prompt-container .anduril_note-save {
+	border-radius: var(--border-radius-medium);
+	height: auto;
+	padding: 0 var(--space-1);
+}
+
+.anduril_note-pill {
+	border-radius: 3px;
+    color: var(--color-background-base);
+    display: inline-flex;
+    font-size: .8em;
+    line-height: 18px;
+	margin: 0 2px 2px -2px;
+    padding: 0 2px;
+}
