@@ -6,7 +6,7 @@ Suggestions and pull requests are highly encouraged!
 
 First, clone the repo:
 
-1. git clone https://github.com/jtmcgrath/harmony
+1. git clone https://github.com/jtmcgrath/anduril
 
 For now there's no need for any tooling, and files are imported into the extension manually. This may have to change if the extension grows.
 
