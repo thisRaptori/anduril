@@ -75,6 +75,19 @@ const controls = [
 		category: 'features',
 	},
 	{
+		description:
+			'If you want to enjoy Twitch without having to see viewer counts, uncheck this box! When this is uncheked, the viewer counts on the sidebar, the discover view, and beneath the stream itself are all removed.',
+		label: 'Show Viewer Counts',
+		type: 'header',
+	},
+	{
+		id: 'showViewerCounts',
+		label: 'Show Viewer Counts',
+		initialValue: true,
+		type: 'checkbox',
+		category: 'features',
+	},
+	{
 		description: `The features below are currently under development. Due to the way Twitch chat functions, they aren't 100% reliable, so use with caution, and please reach out if you encounter any bugs!`,
 		label: 'Experimental Features',
 		type: 'header',

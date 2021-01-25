@@ -1,0 +1,5 @@
+[data-hide-viewer-counts='true'] .tw-media-card-stat,
+[data-hide-viewer-counts='true'] [data-a-target='animated-channel-viewers-count'],
+[data-hide-viewer-counts='true'] [data-a-target='side-nav-live-status'] {
+	display: none !important;
+}
