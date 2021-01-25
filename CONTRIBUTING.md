@@ -6,7 +6,7 @@ Suggestions and pull requests are highly encouraged!
 
 First, clone the repo:
 
-1. git clone https://github.com/jtmcgrath/harmony
+1. `git clone https://github.com/thisRaptori/anduril.git`
 
 For now there's no need for any tooling, and files are imported into the extension manually. This may have to change if the extension grows.
 
@@ -17,7 +17,7 @@ Using Chrome:
 1.  Open `chrome://extensions`
 1.  Check the `Developer mode` checkbox
 1.  Click on the `Load unpacked extension` button
-1.  Select the folder `harmony/src`
+1.  Select the folder `anduril/src`
 
 #### Working on features
 
