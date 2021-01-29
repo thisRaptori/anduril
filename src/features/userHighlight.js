@@ -123,7 +123,7 @@
 
 				const findChat = () => {
 					const chatList = document.querySelector(
-						'.chat-list--default',
+						'.chat-list--default, .chat-list--other',
 					)
 
 					if (chatList) {

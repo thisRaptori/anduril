@@ -20,7 +20,10 @@
 					if (mutation.type !== 'childList') return
 
 					mutation.addedNodes.forEach((node) => {
-						if (!node.dataset || node.dataset.testSelector !== 'chat-line-message') {
+						if (
+							!node.dataset ||
+							node.dataset.testSelector !== 'chat-line-message'
+						) {
 							return
 						}
 
@@ -59,7 +62,7 @@
 
 				const findChat = () => {
 					const chatList = document.querySelector(
-						'.chat-list--default',
+						'.chat-list--default, .chat-list--other',
 					)
 
 					if (chatList) {

@@ -41,7 +41,10 @@
 					}
 
 					mutation.addedNodes.forEach((node) => {
-						if (!node.dataset || node.dataset.testSelector !== 'chat-line-message') {
+						if (
+							!node.dataset ||
+							node.dataset.testSelector !== 'chat-line-message'
+						) {
 							return
 						}
 
@@ -82,7 +85,9 @@
 
 						observer.disconnect()
 						observer.observe(
-							chatContainer.querySelector('.chat-list--default'),
+							chatContainer.querySelector(
+								'.chat-list--default,.chat-list--other',
+							),
 							{
 								attributes: false,
 								childList: true,
