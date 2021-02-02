@@ -75,6 +75,18 @@ const controls = [
 		category: 'features',
 	},
 	{
+		description: `When a lot of users are highlighted, it can be easy to miss messages where a highlighted user tries to <strong>@mention</strong> you.<br /><br /> If you enable the "highlighted mentions" option, any highlighted message which includes an <strong>@mention</strong> of your username will be further highlighted to make it more visible (with a full colour background instead of a border).`,
+		label: 'Highlighted Mentions',
+		type: 'header',
+	},
+	{
+		id: 'highlightedMentions',
+		label: 'Enable Highlighted Mentions',
+		initialValue: false,
+		type: 'checkbox',
+		category: 'features',
+	},
+	{
 		description:
 			'If you want to enjoy Twitch without having to see viewer counts, uncheck this box! When this is uncheked, the viewer counts on the sidebar, the discover view, and beneath the stream itself are all removed.',
 		label: 'Show Viewer Counts',

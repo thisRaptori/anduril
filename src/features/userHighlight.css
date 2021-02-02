@@ -1,0 +1,4 @@
+.anduril_mention-recipient :not(.mention-fragment--recipient) {
+    background: transparent !important;
+    color: inherit !important;
+}

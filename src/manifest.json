@@ -28,6 +28,7 @@
 			"css": [
 				"features/chatFilters.css",
 				"features/hideViewerCounts.css",
+				"features/userHighlight.css",
 				"features/userNote.css"
 			]
 		}

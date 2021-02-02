@@ -21,6 +21,7 @@
 				highlightVIPs: false,
 				highlightSubscribers: false,
 				highlightUsers: '',
+				highlightedMentions: false,
 				ignoreUsers: 'Streamlabs, Streamelements, Nightbot',
 			},
 		},
@@ -33,6 +34,7 @@
 				highlightVIPs,
 				highlightSubscribers,
 				highlightUsers: _highlightUsers,
+				highlightedMentions,
 				ignoreUsers: _ignoreUsers,
 			},
 		}) => {
@@ -107,10 +109,19 @@
 							).toFixed(2)})`
 						}
 
-						node.style[
-							'box-shadow'
-						] = `inset 16px 3px 0 0 ${colour}`
-						node.style['transition'] = `.5s ease all`
+						if (
+							highlightedMentions &&
+							node.querySelector('.mention-fragment--recipient')
+						) {
+							node.style.background = colour
+							node.style.color = 'var(--color-hinted-grey-1)'
+							node.classList.add('anduril_mention-recipient')
+						} else {
+							node.style[
+								'box-shadow'
+							] = `inset 16px 3px 0 0 ${colour}`
+							node.style['transition'] = `.5s ease all`
+						}
 					})
 				})
 			})
