@@ -1,3 +1,8 @@
+.anduril_mention-recipient {
+    color: black !important;
+    color: var(--color-hinted-grey-1) !important;
+}
+
 .anduril_mention-recipient :not(.mention-fragment--recipient) {
     background: transparent !important;
     color: inherit !important;

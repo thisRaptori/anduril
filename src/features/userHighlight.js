@@ -113,8 +113,7 @@
 							highlightedMentions &&
 							node.querySelector('.mention-fragment--recipient')
 						) {
-							node.style.background = colour
-							node.style.color = 'var(--color-hinted-grey-1)'
+							node.setAttribute('style', `background: ${colour} !important; color: var(--color-hinted-grey-1) !important`)
 							node.classList.add('anduril_mention-recipient')
 						} else {
 							node.style[
