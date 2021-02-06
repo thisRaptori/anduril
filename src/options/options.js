@@ -82,7 +82,7 @@ const controls = [
 	{
 		id: 'highlightedMentions',
 		label: 'Enable Highlighted Mentions',
-		initialValue: false,
+		initialValue: true,
 		type: 'checkbox',
 		category: 'features',
 	},

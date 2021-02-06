@@ -21,7 +21,7 @@
 				highlightVIPs: false,
 				highlightSubscribers: false,
 				highlightUsers: '',
-				highlightedMentions: false,
+				highlightedMentions: true,
 				ignoreUsers: 'Streamlabs, Streamelements, Nightbot',
 			},
 		},
