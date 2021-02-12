@@ -104,11 +104,11 @@
 						const controls = document.createElement('div')
 						controls.classList.add('anduril_chat-filters-container')
 						controls.innerHTML = `
-							<button data-target="all" class="anduril_chat-filter tw-core-button--secondary">All</button>
-							<button data-target="moderator" class="anduril_chat-filter tw-core-button--secondary">Mod</button>
-							<button data-target="vip" class="anduril_chat-filter tw-core-button--secondary">VIP</button>
-							<button data-target="verified" class="anduril_chat-filter tw-core-button--secondary">Verified</button>
-							<button data-target="subscriber" class="anduril_chat-filter tw-core-button--secondary">Sub</button>
+							<button data-target="all" class="anduril_chat-filter tw-core-button--secondary tw-button--secondary">All</button>
+							<button data-target="moderator" class="anduril_chat-filter tw-core-button--secondary tw-button--secondary">Mod</button>
+							<button data-target="vip" class="anduril_chat-filter tw-core-button--secondary tw-button--secondary">VIP</button>
+							<button data-target="verified" class="anduril_chat-filter tw-core-button--secondary tw-button--secondary">Verified</button>
+							<button data-target="subscriber" class="anduril_chat-filter tw-core-button--secondary tw-button--secondary">Sub</button>
 						`
 						controls.onclick = (e) => {
 							toggleFilter(e.target.dataset.target)
