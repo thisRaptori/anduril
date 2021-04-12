@@ -22,7 +22,7 @@
 		{
 			features: {
 				highlightBroadcasters: true,
-				highlightFirstMessage: true,
+				highlightFirstMessage: '',
 				highlightModerators: true,
 				highlightOpacity: 200,
 				highlightPartners: false,
@@ -48,6 +48,7 @@
 			},
 		}) => {
 			const highlightUsers = parse(_highlightUsers)
+			const highlightChannels = parse(highlightFirstMessage)
 
 			const shouldWatchMessages =
 				highlightBroadcasters ||
@@ -82,7 +83,9 @@
 							.innerText.toLowerCase()
 
 						if (
-							highlightFirstMessage &&
+							highlightChannels.some((channel) =>
+								window.location.pathname.includes(channel),
+							) &&
 							!hasUserBeenSeen(username)
 						) {
 							node.classList.add('anduril_first-message')

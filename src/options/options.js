@@ -63,9 +63,9 @@ const controls = [
 	{
 		id: 'highlightFirstMessage',
 		label: 'Highlight First Message',
-		description: 'Highlights the first message by each user with a flashing username',
-		initialValue: true,
-		type: 'checkbox',
+		description: 'Highlights the first message by each user with a flashing username, enabled for specific channels.<br />(Enter channel names separated by commas)',
+		initialValue: '',
+		type: 'textarea',
 		category: 'features',
 	},
 	{
