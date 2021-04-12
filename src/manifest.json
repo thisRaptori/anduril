@@ -1,8 +1,8 @@
 {
 	"name": "Anduril",
-	"version": "1.2.2",
+	"version": "1.3.2",
 	"description": "Adds useful features to the Twitch interface",
-	"author": "Joe McGrath",
+	"author": "Joe Raptori",
 	"manifest_version": 2,
 	"icons": {
 		"16": "icon/icon16.png",
