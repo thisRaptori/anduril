@@ -61,15 +61,25 @@ const controls = [
 		category: 'features',
 	},
 	{
+		id: 'highlightFirstMessage',
+		label: 'Highlight First Message',
+		description: 'Highlights the first message by each user with a flashing username',
+		initialValue: true,
+		type: 'checkbox',
+		category: 'features',
+	},
+	{
 		id: 'highlightUsers',
-		label: 'Highlight Users (enter usernames separated by commas)',
+		label: 'Highlight Users',
+		description: '(Enter usernames separated by commas)',
 		initialValue: '',
 		type: 'textarea',
 		category: 'features',
 	},
 	{
 		id: 'ignoreUsers',
-		label: 'Ignore Users (enter usernames separated by commas)',
+		label: 'Ignore Users',
+		description: '(Enter usernames separated by commas)',
 		initialValue: 'StreamLabs, StreamElements, Nightbot',
 		type: 'textarea',
 		category: 'features',
@@ -141,37 +151,41 @@ const controls = [
 ]
 
 const renderControl = {
-	checkbox(id, value, { label }) {
+	checkbox(id, value, { description, label }) {
 		return `
 			<div>
 				<label for="${id}">${label}:</label>
+				${description ? `<p>${description}</p>` : ''}
 			</div>
 			<div>
 				<input type="checkbox" id="${id}" ${value ? 'checked' : ''} />
 			</div>`
 	},
-	input(id, value, { label }) {
+	input(id, value, { description, label }) {
 		return `
 			<div>
 				<label for="${id}">${label}:</label>
+				${description ? `<p>${description}</p>` : ''}
 			</div>
 			<div>
 				<input type="text" id="${id}" value="${value}" />
 			</div>`
 	},
-	textarea(id, value, { label }) {
+	textarea(id, value, { description, label }) {
 		return `
 			<div class="full-width">
 				<label for="${id}">${label}:</label>
+				${description ? `<p>${description}</p>` : ''}
 				<textarea id="${id}">${value}</textarea>
 			</div>`
 	},
-	number(id, value, { label, max, min, step, isPercentage }) {
+	number(id, value, { description, label, max, min, step, isPercentage }) {
 		return `
 			<div class="full-width">
 				<label for="${id}">
 					${label}:
 				</label>
+				${description ? `<p>${description}</p>` : ''}
 				<input
 					id="${id}"
 					max="${max}"

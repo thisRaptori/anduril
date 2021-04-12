@@ -8,6 +8,13 @@
 		}
 	}
 
+	const seenUsers = {}
+	const hasUserBeenSeen = (username) => {
+		if (seenUsers[username]) return true
+		seenUsers[username] = true
+		return false
+	}
+
 	const parse = (str) =>
 		str.toLowerCase().replace(/ /g, '').split(',').filter(Boolean)
 
@@ -15,6 +22,7 @@
 		{
 			features: {
 				highlightBroadcasters: true,
+				highlightFirstMessage: true,
 				highlightModerators: true,
 				highlightOpacity: 200,
 				highlightPartners: false,
@@ -28,6 +36,7 @@
 		({
 			features: {
 				highlightBroadcasters,
+				highlightFirstMessage,
 				highlightModerators,
 				highlightOpacity,
 				highlightPartners,
@@ -72,6 +81,13 @@
 							.querySelector('.chat-line__username')
 							.innerText.toLowerCase()
 
+						if (
+							highlightFirstMessage &&
+							!hasUserBeenSeen(username)
+						) {
+							node.classList.add('anduril_first-message')
+						}
+
 						const highlightMessage =
 							(highlightBroadcasters &&
 								node.querySelector('[alt="Broadcaster"]')) ||
@@ -113,7 +129,10 @@
 							highlightedMentions &&
 							node.querySelector('.mention-fragment--recipient')
 						) {
-							node.setAttribute('style', `background: ${colour} !important; color: var(--color-hinted-grey-1) !important`)
+							node.setAttribute(
+								'style',
+								`background: ${colour} !important; color: var(--color-hinted-grey-1) !important`,
+							)
 							node.classList.add('anduril_mention-recipient')
 						} else {
 							node.style[

@@ -1,9 +1,31 @@
 .anduril_mention-recipient {
-    color: black !important;
-    color: var(--color-hinted-grey-1) !important;
+	color: black !important;
+	color: var(--color-hinted-grey-1) !important;
 }
 
 .anduril_mention-recipient :not(.mention-fragment--recipient) {
-    background: transparent !important;
-    color: inherit !important;
+	background: transparent !important;
+	color: inherit !important;
+}
+
+.anduril_first-message .chat-author__display-name {
+	animation: flash 2s infinite ease-in-out;
+	border: 2px solid;
+	border-radius: 4px;
+	display: inline-block;
+	margin: -2px;
+}
+
+@keyframes flash {
+	0% {
+		border-color: transparent;
+	}
+
+	50% {
+		border-color: currentColor;
+	}
+
+	100% {
+		border-color: transparent;
+	}
 }
