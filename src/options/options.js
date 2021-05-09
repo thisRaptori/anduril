@@ -63,7 +63,8 @@ const controls = [
 	{
 		id: 'highlightFirstMessage',
 		label: 'Highlight First Message',
-		description: 'Highlights the first message by each user with a flashing username, enabled for specific channels.<br />(Enter channel names separated by commas)',
+		description:
+			'Highlights the first message by each user with a flashing username, enabled for specific channels.<br />(Enter channel names separated by commas)',
 		initialValue: '',
 		type: 'textarea',
 		category: 'features',
@@ -93,6 +94,19 @@ const controls = [
 		id: 'highlightedMentions',
 		label: 'Enable Highlighted Mentions',
 		initialValue: true,
+		type: 'checkbox',
+		category: 'features',
+	},
+	{
+		label: 'Hide the damn spider emote',
+		description:
+			'Twitch added a spider hype train emote. If you check this option, it will be hidden from you in all chats!',
+		type: 'header',
+	},
+	{
+		id: 'hideTheSpider',
+		label: 'Hide it please',
+		initialValue: false,
 		type: 'checkbox',
 		category: 'features',
 	},
@@ -198,7 +212,7 @@ const renderControl = {
 			</div>`
 	},
 	header(id, value, { description, label }) {
-		return `<h3>${label}</h3><p>${description}</p>`
+		return `<h3>${label}</h3>${description ? `<p>${description}</p>` : ''}`
 	},
 	description(id, value, { description }) {
 		return `<p>${description}</p>`

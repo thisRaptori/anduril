@@ -1,6 +1,6 @@
 {
 	"name": "Anduril",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"description": "Adds useful features to the Twitch interface",
 	"author": "Joe Raptori",
 	"manifest_version": 2,
@@ -20,6 +20,7 @@
 			"matches": ["https://www.twitch.tv/*"],
 			"js": [
 				"features/chatFilters.js",
+				"features/hideTheSpider-p.js",
 				"features/hideViewerCounts.js",
 				"features/userHighlight.js",
 				"features/userNote.js",
@@ -27,6 +28,7 @@
 			],
 			"css": [
 				"features/chatFilters.css",
+				"features/hideTheSpider-p.css",
 				"features/hideViewerCounts.css",
 				"features/userHighlight.css",
 				"features/userNote.css"
