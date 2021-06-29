@@ -8,10 +8,16 @@
 		}
 	}
 
-	const seenUsers = {}
+	let seenUsers = {}
 	const hasUserBeenSeen = (username) => {
 		if (seenUsers[username]) return true
 		seenUsers[username] = true
+		chrome.storage.sync.set({
+			firstMessageState: {
+				seenUsers,
+				lastUpdated: Date.now(),
+			},
+		})
 		return false
 	}
 
@@ -32,6 +38,10 @@
 				highlightedMentions: true,
 				ignoreUsers: 'Streamlabs, Streamelements, Nightbot',
 			},
+			firstMessageState: {
+				seenUsers: {},
+				lastUpdated: null,
+			},
 		},
 		({
 			features: {
@@ -46,7 +56,16 @@
 				highlightedMentions,
 				ignoreUsers: _ignoreUsers,
 			},
+			firstMessageState,
 		}) => {
+			const AN_HOUR = 1000 * 60 * 60
+			if (
+				firstMessageState.lastUpdated &&
+				firstMessageState.lastUpdated - Date.now() < AN_HOUR
+			) {
+				seenUsers = firstMessageState.seenUsers
+			}
+
 			const highlightUsers = parse(_highlightUsers)
 			const highlightChannels = parse(highlightFirstMessage)
 
