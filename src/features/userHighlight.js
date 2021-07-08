@@ -61,7 +61,7 @@
 			const AN_HOUR = 1000 * 60 * 60
 			if (
 				firstMessageState.lastUpdated &&
-				firstMessageState.lastUpdated - Date.now() < AN_HOUR
+				Date.now() - firstMessageState.lastUpdated < AN_HOUR
 			) {
 				seenUsers = firstMessageState.seenUsers
 			}
