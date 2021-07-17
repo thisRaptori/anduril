@@ -9,15 +9,25 @@
 	}
 
 	let seenUsers = {}
-	const hasUserBeenSeen = (username) => {
-		if (seenUsers[username]) return true
-		seenUsers[username] = true
+	let debounceTimeout
+
+	const saveSeenUsers = () => {
 		chrome.storage.sync.set({
 			firstMessageState: {
 				seenUsers,
 				lastUpdated: Date.now(),
 			},
 		})
+	}
+
+	const hasUserBeenSeen = (username) => {
+		if (seenUsers[username]) {
+			clearTimeout(debounceTimeout)
+			debounceTimeout = setTimeout(saveSeenUsers, 500)
+			return true
+		}
+		seenUsers[username] = true
+		saveSeenUsers()
 		return false
 	}
 
